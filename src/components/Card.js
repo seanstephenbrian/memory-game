@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import '../styles/card.css';
+
 export default function Card(props) {
     const [clicked, setClicked] = useState(false);
 
@@ -14,10 +16,8 @@ export default function Card(props) {
         }
     }
 
-    
-
     return (
-        <div onClick={handleClick}>
+        <div className='card' onClick={handleClick}>
             this card has {!clicked ? 'not' : ''} been clicked
         </div>
     )

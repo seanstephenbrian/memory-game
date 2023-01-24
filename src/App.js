@@ -19,7 +19,12 @@ function App() {
   }
 
   return (
-    <Round cardCount='4' />
+    <div className="game-container">
+      <div className="score-section">
+        game won: {gameWon}, game lost: {gameLost}
+      </div>
+      <Round cardCount='4' />
+    </div>
   )
 }
 
