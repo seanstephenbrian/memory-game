@@ -1,0 +1,21 @@
+.title-section {
+    min-height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.title-text {
+    font-family: 'MIP';
+    font-size: calc(var(--rvv));
+}
+
+@media screen and (min-width: 600px) {
+    .title-text{
+        transition: transform 1.5s linear;
+    }
+    .title-text:hover {
+        transform: scale(1.2);
+    }
+    
+}

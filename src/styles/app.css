@@ -20,8 +20,13 @@ time, mark, audio, video {
 }
 
 @font-face {
-	font-family: 'Leluja';
-	src: url('../fonts/leluja.ttf');
+	font-family: 'Fira Mono';
+	src: url('../fonts/fira-mono.ttf');
+}
+
+@font-face {
+	font-family: 'MIP';
+	src: url('../fonts/MIP.otf');
 }
 
 :root {
@@ -33,8 +38,7 @@ html {
 }
 
 body {
-  font-family: 'Leluja';
-  font-weight: lighter;
+  font-family: 'Fira Mono';
 }
 
 html,

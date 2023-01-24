@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Round from './components/Round';
 import Score from './components/Score';
+import Title from './components/Title';
 
 function App() {
     
@@ -63,6 +64,7 @@ function App() {
  
     return (
         <div className="game-container">
+            <Title />
             <Score
                 currentScore={totalClicks}
                 highScore={highScore}
