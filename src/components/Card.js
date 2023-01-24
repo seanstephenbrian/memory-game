@@ -18,7 +18,7 @@ export default function Card(props) {
 
     return (
         <div className='card' onClick={handleClick}>
-            <img src={imagePath}></img>
+            <img src={imagePath} alt='memory card'></img>
         </div>
     )
 }
