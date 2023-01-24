@@ -63,12 +63,10 @@ function App() {
  
     return (
         <div className="game-container">
-            <div className="score-section">
-                <Score
-                    currentScore={totalClicks}
-                    highScore={highScore}
-                />
-            </div>
+            <Score
+                currentScore={totalClicks}
+                highScore={highScore}
+            />
             <div>
                 round number {roundNumber}
             </div>

@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
 
+import '../styles/score.css';
+
+import CurrentScore from '../img/current-score.jpg';
+import HighScore from '../img/high-score.jpg';
+
 export default function Score(props) {
 
     // props:
     const {currentScore, highScore} = props;
 
     return (
-        <div>current score: {currentScore}, high score: {highScore}</div>
+        <div className='scoreboard'>
+            <div className='score current-score'>
+                <span className='score-label'>current score:</span>
+                <span className='score-text'>{currentScore}</span>
+            </div>
+            <div className='score high-score'>
+                <span className='score-label'>high score:</span>
+                <span className='score-text'>{highScore}</span>
+            </div>
+        </div>
     )
 }

@@ -19,14 +19,22 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+@font-face {
+	font-family: 'Leluja';
+	src: url('../fonts/leluja.ttf');
+}
+
+:root {
+	--rvv: calc(1rem + 2vmax);
+}
+
 html {
   box-sizing: border-box;
 }
 
 body {
-  color: black;
-  background-color: rgb(103, 103, 103);
-  font-family: Helvetica;
+  font-family: 'Leluja';
+  font-weight: lighter;
 }
 
 html,
@@ -40,9 +48,4 @@ body,
 #root {
 	display: flex;
 	flex-direction: column;
-}
-
-.score-section {
-    background-color: black;
-    color: white;
 }

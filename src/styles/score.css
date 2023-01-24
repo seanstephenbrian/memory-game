@@ -1,0 +1,17 @@
+.scoreboard {
+    min-height: 7vh;
+    display: flex;
+    gap: calc(1.2*var(--rvv));
+    font-size: calc(0.6*var(--rvv));
+}
+
+.score {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.current-score {
+    justify-content: flex-end;
+}
