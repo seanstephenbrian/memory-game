@@ -2,11 +2,12 @@
     min-height: 6vh;
     max-height: 40px;
     display: flex;
-    gap: calc(1*var(--rvv));
+    justify-content: center;
     font-size: calc(0.55*var(--rvv));
 }
 
 .score {
+    margin-left: calc(0.8*var(--rvv));
     width: 50%;
     display: flex;
     align-items: center;
@@ -14,9 +15,27 @@
 }
 
 .current-score {
+    margin-left: calc(0.3*var(--rvv));
     justify-content: flex-end;
 }
 
 .score-label {
     text-align: end;
+}
+
+/* desktop effects: */
+@media screen and (min-width: 600px) {
+
+    .current-score,
+    .high-score {
+        transition: color 0.1s linear;
+    }
+
+    .current-score:hover {
+        color: red;
+    }
+
+    .high-score:hover {
+        color: blue;
+    }
 }

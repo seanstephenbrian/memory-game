@@ -6,16 +6,20 @@
 }
 
 .title-text {
+    color: #007600;
     font-family: 'MIP';
     font-size: calc(var(--rvv));
 }
 
+/* desktop effects: */
 @media screen and (min-width: 600px) {
+
     .title-text{
-        transition: transform 1.5s linear;
+        transition: transform 1.3s linear, color 1.3s linear;
     }
+
     .title-text:hover {
+        color: #20C20E;
         transform: scale(1.2);
     }
-    
 }

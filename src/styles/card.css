@@ -1,10 +1,18 @@
 .card {
-    width: 150px;
-    height: 200px;
+    --card-border-radius: 12px;
+    cursor: pointer;
+    width: calc(3.5*var(--rvv));
+    max-width: 150px;
     border: 1px solid black;
+    border-radius: var(--card-border-radius);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin: 5px;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: var(--card-border-radius);
 }
