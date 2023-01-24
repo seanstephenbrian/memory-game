@@ -5,7 +5,7 @@ import '../styles/card.css';
 export default function Card(props) {
     const [clicked, setClicked] = useState(false);
 
-    const { relayClick, id } = props;
+    const { relayClick, imagePath } = props;
 
     function handleClick() {
         if (!clicked) {
@@ -18,7 +18,7 @@ export default function Card(props) {
 
     return (
         <div className='card' onClick={handleClick}>
-            this card has {!clicked ? 'not' : ''} been clicked
+            <img src={imagePath}></img>
         </div>
     )
 }

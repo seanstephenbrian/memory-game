@@ -7,7 +7,7 @@ import '../styles/round.css';
 
 export default function Round(props) {
     // props:
-    const {cardCount, receiveClickStatus, receiveRoundStatus} = props;
+    const {cardCount, sendClickStatus, sendRoundStatus} = props;
 
     // state:
     const [clickCount, setClickCount] = useState(0);
@@ -16,15 +16,15 @@ export default function Round(props) {
     // methods:
     function checkRoundStatus() {
         if (parseInt(cardCount) === clickCount) {
-            receiveRoundStatus('won');
-        }
+            sendRoundStatus('won');
+        }        
     }
 
     function createRoundCards() {
         for (let i = 1; i <= parseInt(cardCount); i++) {
             const newCard = {
                 id: uniqid(),
-                image: `../img/${i}.jpg`
+                imagePath: require(`../img/${i}.jpg`)
             };
             setCurrentCards((currentCards) => {
                 return [...currentCards, newCard];
@@ -33,7 +33,7 @@ export default function Round(props) {
     }
 
     function handleCardClick(clickStatus) {
-        receiveClickStatus(clickStatus);
+        sendClickStatus(clickStatus);
         if (clickStatus === true) {
             setClickCount((clickCount) => {
                 return clickCount + 1;
@@ -56,8 +56,10 @@ export default function Round(props) {
     }, [clickCount]);
 
     useEffect(() => {
+        setCurrentCards([]);
+        setClickCount(0);
         createRoundCards();
-    }, []);
+    }, [cardCount]);
 
     return (
         <div className='round'>
@@ -68,7 +70,8 @@ export default function Round(props) {
                 {currentCards.map((card) => {
                     return (
                         <Card 
-                            key={card.id} 
+                            key={card.id}
+                            imagePath={card.imagePath} 
                             relayClick={handleCardClick}
                         />
                     )

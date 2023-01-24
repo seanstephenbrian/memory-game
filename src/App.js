@@ -45,8 +45,8 @@ function App() {
             </div>
             <Round 
                 cardCount={determineCardQuantity(roundNumber)}
-                receiveClickStatus={checkForLoss} 
-                receiveRoundStatus={incrementRound}
+                sendClickStatus={checkForLoss} 
+                sendRoundStatus={incrementRound}
             />
         </div>
     )
