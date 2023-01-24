@@ -16,3 +16,14 @@
     width: 100%;
     border-radius: var(--card-border-radius);
 }
+
+@media screen and (min-width: 600px) {
+    
+    .card {
+        transition: transform 0.15s linear;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+}

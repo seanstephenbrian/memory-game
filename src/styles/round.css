@@ -39,6 +39,9 @@
 
 @media screen and (min-width: 600px) {
     .round-title:hover {
-
+        --hover-green: #00ff00;
+        background-color: black;
+        color: var(--hover-green);
+        border: 1px solid var(--hover-green);
     }
 }
