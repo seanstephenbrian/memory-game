@@ -5,7 +5,7 @@ import '../styles/card.css';
 export default function Card(props) {
     const [clicked, setClicked] = useState(false);
 
-    const { relayClick } = props;
+    const { relayClick, id } = props;
 
     function handleClick() {
         if (!clicked) {

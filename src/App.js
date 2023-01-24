@@ -26,10 +26,12 @@ function App() {
     }
 
     function incrementRound(roundStatus) {
-        if (roundStatus === 'won') {
+        if (roundStatus === 'won' && roundNumber !== 5) {
             setRoundNumber((roundNumber) => {
                 return roundNumber + 1;
             })
+        } else if (roundStatus === 'won' && roundNumber === 5) {
+            setGameWon(true);
         }
     }
  
@@ -44,7 +46,7 @@ function App() {
             <Round 
                 cardCount='4'
                 receiveClickStatus={checkForLoss} 
-                receiveRoundStatus={incrementRound} 
+                receiveRoundStatus={incrementRound}
             />
         </div>
     )

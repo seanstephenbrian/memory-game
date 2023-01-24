@@ -1,13 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import uniqid from 'uniqid';
 
 import Card from './Card';
 
 import '../styles/round.css';
 
 export default function Round(props) {
+    // props:
     const {cardCount, receiveClickStatus, receiveRoundStatus} = props;
-    const [clickCount, setClickCount] = useState(0);
 
+    // state:
+    const [clickCount, setClickCount] = useState(0);
+    const [currentCards, setCurrentCards] = useState([
+        {
+            id: uniqid(),
+            image: ''
+        },
+        {
+            id: uniqid(),
+            image: ''
+        },
+        {
+            id: uniqid(),
+            image: ''
+        },
+        {
+            id: uniqid(),
+            image: ''
+        }
+    ]);
+
+    // methods:
     function checkRoundStatus() {
         if (parseInt(cardCount) === clickCount) {
             receiveRoundStatus('won');
@@ -20,8 +43,19 @@ export default function Round(props) {
             setClickCount((clickCount) => {
                 return clickCount + 1;
             });
+            rearrangeCards();
         }
     }
+
+    function rearrangeCards() {
+        let shuffledCardArray = currentCards;
+        for (let i = shuffledCardArray.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [shuffledCardArray[i], shuffledCardArray[j]] = [shuffledCardArray[j], shuffledCardArray[i]];
+        }
+        setCurrentCards(shuffledCardArray);
+    }
+
 
     useEffect(() => {
         checkRoundStatus();
@@ -33,10 +67,14 @@ export default function Round(props) {
                 {cardCount} cards in this round... {clickCount} cards clicked so far
             </div>
             <div className='card-container'>
-                <Card relayClick={handleCardClick} />
-                <Card relayClick={handleCardClick} />
-                <Card relayClick={handleCardClick} />
-                <Card relayClick={handleCardClick} />
+                {currentCards.map((card) => {
+                    return (
+                        <Card 
+                            key={card.id} 
+                            relayClick={handleCardClick}
+                        />
+                    )
+                })}
             </div>
         </div>
     )
