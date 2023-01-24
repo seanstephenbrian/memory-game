@@ -8,7 +8,12 @@ import '../styles/round.css';
 export default function Round(props) {
 
     // props:
-    const {cardCount, sendClickStatus, sendRoundStatus} = props;
+    const {
+        cardCount,
+        roundNumber, 
+        sendClickStatus, 
+        sendRoundStatus
+    } = props;
 
     // state:
     const [clickCount, setClickCount] = useState(0);
@@ -73,7 +78,12 @@ export default function Round(props) {
     return (
         <div className='round'>
             <div className='round-title'>
-                {cardCount} cards in this round... {clickCount} cards clicked so far
+                <div className='round-number'>
+                    round {roundNumber}
+                </div>
+                <div className='round-stats'>
+                    {clickCount}/{cardCount} cards clicked
+                </div>
             </div>
             <div className='card-container'>
                 {currentCards.map((card) => {

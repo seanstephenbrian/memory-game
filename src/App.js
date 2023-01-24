@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+// components:
+import Footer from "./components/Footer";
 import Round from './components/Round';
 import Score from './components/Score';
 import Title from './components/Title';
@@ -62,6 +64,7 @@ function App() {
         }
     }, [totalClicks]);
  
+    // render:
     return (
         <div className="game-container">
             <Title />
@@ -69,14 +72,13 @@ function App() {
                 currentScore={totalClicks}
                 highScore={highScore}
             />
-            <div>
-                round number {roundNumber}
-            </div>
             <Round 
                 cardCount={determineCardQuantity(roundNumber)}
+                roundNumber={roundNumber}
                 sendClickStatus={processClickStatus} 
                 sendRoundStatus={incrementRound}
             />
+            <Footer />
         </div>
     )
 }

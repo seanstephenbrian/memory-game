@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import '../styles/score.css';
-
-import CurrentScore from '../img/current-score.jpg';
-import HighScore from '../img/high-score.jpg';
 
 export default function Score(props) {
 

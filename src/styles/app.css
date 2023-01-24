@@ -43,13 +43,14 @@ body {
 
 html,
 body,
-#root {
+#root,
+.game-container {
 	min-height: 100vh;
 	min-width: 100vw;
 	overflow: hidden;
 }
 
-#root {
+.game-container {
 	display: flex;
 	flex-direction: column;
 }

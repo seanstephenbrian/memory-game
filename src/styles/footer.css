@@ -1,0 +1,9 @@
+footer {
+    min-height: 5vh;
+    max-height: 20px;
+    font-size: calc(0.4*var(--rvv));
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

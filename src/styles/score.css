@@ -1,8 +1,9 @@
 .scoreboard {
-    min-height: 7vh;
+    min-height: 6vh;
+    max-height: 40px;
     display: flex;
-    gap: calc(1.2*var(--rvv));
-    font-size: calc(0.6*var(--rvv));
+    gap: calc(1*var(--rvv));
+    font-size: calc(0.55*var(--rvv));
 }
 
 .score {
@@ -14,4 +15,8 @@
 
 .current-score {
     justify-content: flex-end;
+}
+
+.score-label {
+    text-align: end;
 }
