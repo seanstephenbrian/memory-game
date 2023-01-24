@@ -36,3 +36,9 @@
     justify-content: center;
     gap: calc(0.5*var(--rvv));
 }
+
+@media screen and (min-width: 600px) {
+    .round-title:hover {
+
+    }
+}
