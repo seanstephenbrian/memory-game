@@ -11,29 +11,24 @@ export default function Round(props) {
 
     // state:
     const [clickCount, setClickCount] = useState(0);
-    const [currentCards, setCurrentCards] = useState([
-        {
-            id: uniqid(),
-            image: ''
-        },
-        {
-            id: uniqid(),
-            image: ''
-        },
-        {
-            id: uniqid(),
-            image: ''
-        },
-        {
-            id: uniqid(),
-            image: ''
-        }
-    ]);
+    const [currentCards, setCurrentCards] = useState([]);
 
     // methods:
     function checkRoundStatus() {
         if (parseInt(cardCount) === clickCount) {
             receiveRoundStatus('won');
+        }
+    }
+
+    function createRoundCards() {
+        for (let i = 1; i <= parseInt(cardCount); i++) {
+            const newCard = {
+                id: uniqid(),
+                image: `../img/${i}.jpg`
+            };
+            setCurrentCards((currentCards) => {
+                return [...currentCards, newCard];
+            });
         }
     }
 
@@ -56,10 +51,13 @@ export default function Round(props) {
         setCurrentCards(shuffledCardArray);
     }
 
-
     useEffect(() => {
         checkRoundStatus();
     }, [clickCount]);
+
+    useEffect(() => {
+        createRoundCards();
+    }, []);
 
     return (
         <div className='round'>
