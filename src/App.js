@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Round from './components/Round';
+import Score from './components/Score';
 
 function App() {
     
-    const [roundNumber, setRoundNumber] = useState(1);
-    
-    const [gameWon, setGameWon] = useState(false);
-    
+    // state:
     const [gameLost, setGameLost] = useState(false);
+    const [gameWon, setGameWon] = useState(false);
+    const [roundNumber, setRoundNumber] = useState(1);
+    const [totalClicks, setTotalClicks] = useState(0);
+    const [highScore, setHighScore] = useState(0);
 
-    function checkForLoss(clickStatus) {
+    function processClickStatus(clickStatus) {
+        // if it was a bad click, end the game:
         if (!clickStatus) {
             setGameLost(true);
+        // if it was a good click, increment the totalClicks variable:
+        } else if (clickStatus) {
+            setTotalClicks((totalClicks) => {
+                return totalClicks + 1;
+            });
         }
         return;
     }
@@ -34,18 +42,39 @@ function App() {
             setGameWon(true);
         }
     }
+
+    // hooks:
+    // when the click count is incremented:
+    useEffect(() => {
+        // if there's a high score saved in localStorage and it's greater than the current # of clicks...
+        if (localStorage.getItem('highScore') && parseInt(localStorage.getItem('highScore')) >= totalClicks) {
+            // set the state high score to the localStore high score:
+            setHighScore(localStorage.getItem('highScore'));
+        // if there's a high score saved locally and it's less than the current # of clicks
+        // OR if there's no high score saved locally...
+        } else if ((localStorage.getItem('highScore') && parseInt(localStorage.getItem('highScore')) < totalClicks) || !localStorage.getItem('highScore')) {
+            // set the state high score to the current # of clicks:
+            setHighScore(totalClicks);
+            // and update the localStorage high score:
+            localStorage.setItem('highScore', totalClicks);
+        // if there's no high score saved locally, set the current # of clicks to the state high score AND save it to localStorage:
+        }
+    }, [totalClicks]);
  
     return (
         <div className="game-container">
             <div className="score-section">
-                game status: {gameWon ? 'game won!' : ''} {gameLost ? 'game lost!' : ''}
+                <Score
+                    currentScore={totalClicks}
+                    highScore={highScore}
+                />
             </div>
             <div>
                 round number {roundNumber}
             </div>
             <Round 
                 cardCount={determineCardQuantity(roundNumber)}
-                sendClickStatus={checkForLoss} 
+                sendClickStatus={processClickStatus} 
                 sendRoundStatus={incrementRound}
             />
         </div>

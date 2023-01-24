@@ -3,10 +3,14 @@ import React, { useState } from 'react';
 import '../styles/card.css';
 
 export default function Card(props) {
-    const [clicked, setClicked] = useState(false);
 
+    // props:
     const { relayClick, imagePath } = props;
 
+    // state:
+    const [clicked, setClicked] = useState(false);
+
+    // methods:
     function handleClick() {
         if (!clicked) {
             setClicked(true);

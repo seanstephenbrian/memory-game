@@ -6,6 +6,7 @@ import Card from './Card';
 import '../styles/round.css';
 
 export default function Round(props) {
+
     // props:
     const {cardCount, sendClickStatus, sendRoundStatus} = props;
 
@@ -33,6 +34,7 @@ export default function Round(props) {
         setCurrentCards(shuffledCardArray);
     }
 
+    // hooks:
     // if clickCount changes, check for winning conditions:
     useEffect(() => {
         if (parseInt(cardCount) === clickCount) {
@@ -51,7 +53,7 @@ export default function Round(props) {
         for (let i = 1; i <= parseInt(cardCount); i++) {
             possiblePaths.push(i);
         }
-        // card creation logic:
+        // card creation loop:
         for (let i = 1; i <= parseInt(cardCount); i++) {
             // get a random image from the possible image paths:
             const random = Math.random() * (parseInt(possiblePaths.length) - 1);
