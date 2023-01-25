@@ -35,7 +35,7 @@
     text-decoration: underline;
 }
 
-/* desktop effects: */
+/* desktop hover effects: */
 @media screen and (min-width: 600px) {
 
     .title-text{

@@ -19,9 +19,12 @@ footer {
     color: black;
 }
 
+/* desktop hover effect: */
 @media screen and (min-width: 600px) {
+
     .ssbbd-link:hover {
         text-decoration: underline;
         color: #20C20E;
     }
+    
 }

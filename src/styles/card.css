@@ -17,6 +17,7 @@
     border-radius: var(--card-border-radius);
 }
 
+/* desktop hover effect: */
 @media screen and (min-width: 600px) {
     
     .card {
@@ -26,4 +27,5 @@
     .card:hover {
         transform: scale(1.05);
     }
+
 }

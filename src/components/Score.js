@@ -7,6 +7,7 @@ export default function Score(props) {
     // props:
     const {currentScore, highScore} = props;
 
+    // render:
     return (
         <div className='scoreboard'>
             <div className='score current-score'>

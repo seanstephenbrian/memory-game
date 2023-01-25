@@ -23,7 +23,7 @@
     text-align: end;
 }
 
-/* desktop effects: */
+/* desktop hover effects: */
 @media screen and (min-width: 600px) {
 
     .current-score:hover {
@@ -34,6 +34,6 @@
     .high-score:hover {
         color: #1aff00;
         -webkit-text-stroke: 0.5px black;
-
     }
+
 }

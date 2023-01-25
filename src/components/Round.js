@@ -39,7 +39,7 @@ export default function Round(props) {
         setCurrentCards(shuffledCardArray);
     }
 
-    // hooks:
+    // HOOKS:
     // if clickCount changes, check for winning conditions:
     useEffect(() => {
         if (parseInt(cardCount) === clickCount) {
@@ -60,7 +60,7 @@ export default function Round(props) {
         }
         // card creation loop:
         for (let i = 1; i <= parseInt(cardCount); i++) {
-            // get a random image from the possible image paths:
+            // extract a random image path from the possible image paths array:
             const random = Math.random() * (parseInt(possiblePaths.length) - 1);
             const randomPath = possiblePaths.splice(random, 1);
             // then create the new card with the random image path:
@@ -75,12 +75,25 @@ export default function Round(props) {
         }
     }, [cardCount]);
 
+    // conditional rendering of round number:
+    let roundDeclaration;
+    if (roundNumber !== 5) {
+        roundDeclaration =
+            <div className='round-number'>
+                round {roundNumber}
+            </div>;
+    } else if (roundNumber === 5) {
+        roundDeclaration =
+            <div className='round-number'>
+                final round
+            </div>
+    }
+
+    // render:
     return (
         <div className='round'>
             <div className='round-title'>
-                <div className='round-number'>
-                    round {roundNumber}
-                </div>
+                {roundDeclaration}
                 <div className='round-stats'>
                     {clickCount}/{cardCount} cards clicked
                 </div>
