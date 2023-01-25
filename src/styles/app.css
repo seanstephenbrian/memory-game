@@ -47,6 +47,7 @@ body,
 .game-container {
 	min-height: 100vh;
 	min-width: 100vw;
+	max-width: 100vw;
 	overflow-x: hidden;
 }
 
@@ -54,4 +55,6 @@ body,
 	display: flex;
 	flex-direction: column;
 	gap: calc(0.3*var(--rvv));
+	background: rgb(71,255,71);
+	background: linear-gradient(135deg, rgba(71,255,71,0.22735031512605042) 0%, rgba(0,138,0,0.5074623599439776) 100%);
 }

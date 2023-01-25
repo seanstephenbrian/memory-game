@@ -9,9 +9,10 @@
 
 .title-text {
     margin: calc(0.2*var(--rvv)) 0;
-    color: #007600;
+    color: #20C20E;
+    -webkit-text-stroke: 0.5px black;
     font-family: 'MIP';
-    font-size: calc(var(--rvv));
+    font-size: calc(1.3*var(--rvv));
 }
 
 .instructions {
@@ -39,11 +40,11 @@
 @media screen and (min-width: 600px) {
 
     .title-text{
-        transition: transform 1.3s linear, color 1.3s linear;
+        transition: transform 0.75s linear, color 0.75s linear;
     }
 
     .title-text:hover {
-        color: #20C20E;
+        color: black;
         transform: scale(1.2);
     }
 
