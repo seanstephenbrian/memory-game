@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/memory-game/static/css/main.61073871.css",
+    "main.js": "/memory-game/static/js/main.d1570b31.js",
+    "static/media/fira-mono.ttf": "/memory-game/static/media/fira-mono.7534a76c5a021a6aae2f.ttf",
+    "static/media/5.jpg": "/memory-game/static/media/5.bcb3e0cf0d25bd7b9f37.jpg",
+    "static/media/11.jpg": "/memory-game/static/media/11.c4adfd1770edcfe4c5de.jpg",
+    "static/media/1.jpg": "/memory-game/static/media/1.fc4079e3da185cfde509.jpg",
+    "static/media/8.jpg": "/memory-game/static/media/8.648dfa22229da681d067.jpg",
+    "static/media/3.jpg": "/memory-game/static/media/3.118b2bd7838b8158ace5.jpg",
+    "static/media/13.jpg": "/memory-game/static/media/13.9478307766d9fae49df0.jpg",
+    "static/media/12.jpg": "/memory-game/static/media/12.94f420e966024e457827.jpg",
+    "static/media/MIP.otf": "/memory-game/static/media/MIP.6c6b3423cdde14dd31d3.otf",
+    "static/media/9.jpg": "/memory-game/static/media/9.734246adbe7544362d9f.jpg",
+    "static/media/2.jpg": "/memory-game/static/media/2.cbcea676bdaaf393c26f.jpg",
+    "static/media/6.jpg": "/memory-game/static/media/6.66d69eebb115c5570c73.jpg",
+    "static/media/7.jpg": "/memory-game/static/media/7.0cf8365592e472c1f77c.jpg",
+    "static/media/14.jpg": "/memory-game/static/media/14.f7e1c1f72a901ca0b880.jpg",
+    "static/media/10.jpg": "/memory-game/static/media/10.6a64b7c94ec0fac3d23d.jpg",
+    "static/media/4.jpg": "/memory-game/static/media/4.05bfba53f6c211f2df1f.jpg",
+    "static/media/15.jpg": "/memory-game/static/media/15.b6970312a61ef9798845.jpg",
+    "index.html": "/memory-game/index.html",
+    "main.61073871.css.map": "/memory-game/static/css/main.61073871.css.map",
+    "main.d1570b31.js.map": "/memory-game/static/js/main.d1570b31.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61073871.css",
+    "static/js/main.d1570b31.js"
+  ]
+}
