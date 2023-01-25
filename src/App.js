@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 
 // components:
 import Footer from "./components/Footer";
+import LossMessage from "./components/LossMessage";
 import Round from './components/Round';
 import Score from './components/Score';
 import Title from './components/Title';
+import WinMessage from "./components/WinMessage";
 
 function App() {
     
@@ -15,19 +17,7 @@ function App() {
     const [totalClicks, setTotalClicks] = useState(0);
     const [highScore, setHighScore] = useState(0);
 
-    function processClickStatus(clickStatus) {
-        // if it was a bad click, end the game:
-        if (!clickStatus) {
-            setGameLost(true);
-        // if it was a good click, increment the totalClicks variable:
-        } else if (clickStatus) {
-            setTotalClicks((totalClicks) => {
-                return totalClicks + 1;
-            });
-        }
-        return;
-    }
-
+    // methods:
     function determineCardQuantity(round) {
         if (round === 1) return 4;
         if (round === 2) return 6;
@@ -46,7 +36,27 @@ function App() {
         }
     }
 
-    // hooks:
+    function processClickStatus(clickStatus) {
+        // if it was a bad click, end the game:
+        if (!clickStatus) {
+            setGameLost(true);
+        // if it was a good click, increment the totalClicks variable:
+        } else if (clickStatus) {
+            setTotalClicks((totalClicks) => {
+                return totalClicks + 1;
+            });
+        }
+        return;
+    }
+
+    function restartGame() {
+        setGameLost(false);
+        setGameWon(false);
+        setRoundNumber(1);
+        setTotalClicks(0);
+    }
+
+    // HOOKS:
     // when the click count is incremented:
     useEffect(() => {
         // if there's a high score saved in localStorage and it's greater than the current # of clicks...
@@ -64,10 +74,11 @@ function App() {
         }
     }, [totalClicks]);
  
-    // render:
-    return (
-        <div className="game-container">
-            <Title />
+    // conditions for rendering of main content based on game status:
+    let mainContent;
+    if (!gameLost && !gameWon) {
+        mainContent = 
+        <>
             <Score
                 currentScore={totalClicks}
                 highScore={highScore}
@@ -78,6 +89,18 @@ function App() {
                 sendClickStatus={processClickStatus} 
                 sendRoundStatus={incrementRound}
             />
+        </>;
+    } else if (gameLost) {
+        mainContent = <LossMessage handlePlayAgainClick={restartGame} />
+    } else if (gameWon) {
+        mainContent = <WinMessage handlePlayAgainClick={restartGame} />
+    }
+
+    // render:
+    return (
+        <div className="game-container">
+            <Title />
+            {mainContent}
             <Footer />
         </div>
     )

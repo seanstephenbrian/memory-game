@@ -1,0 +1,69 @@
+@keyframes animateLossMessage {
+    from {
+        color: black;
+        transform: scale(1);
+    }
+  
+    to {
+        color: red;
+        transform: scale(1.4);
+    }
+}
+
+@keyframes animateWinMessage {
+    from {
+        color: black;
+        transform: scale(1);
+    }
+  
+    to {
+        color: blue;
+        transform: scale(1.4);
+    }
+}
+
+.outcome-page {
+    padding: calc(var(--rvv)) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--rvv));
+}
+
+.outcome-message {
+    font-family: 'MIP';
+    font-size: calc(var(--rvv));
+}
+
+.loss-message {
+    animation: 1.2s ease-in-out 0s forwards animateLossMessage;
+}
+
+.win-message {
+    animation: 1.2s ease-in-out 0s forwards animateWinMessage;   
+}
+
+.play-again {
+    cursor: pointer;
+    font-size: calc(0.7*var(--rvv));
+    padding: calc(0.2*var(--rvv));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    background-color: #00d5007d;
+}
+
+/* desktop hover effect: */
+@media screen and (min-width: 600px) {
+
+    .play-again {
+        transition: transform 0.1s ease-in;
+    }
+
+    .play-again:hover {
+        transform: scale(1.1);
+    }
+}

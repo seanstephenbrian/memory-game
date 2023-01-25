@@ -26,11 +26,6 @@
 /* desktop effects: */
 @media screen and (min-width: 600px) {
 
-    .current-score,
-    .high-score {
-        transition: color 0.1s linear;
-    }
-
     .current-score:hover {
         color: #1aff00;
         -webkit-text-stroke: 0.5px black;
