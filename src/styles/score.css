@@ -32,10 +32,13 @@
     }
 
     .current-score:hover {
-        color: red;
+        color: #1aff00;
+        -webkit-text-stroke: 0.5px black;
     }
 
     .high-score:hover {
-        color: blue;
+        color: #1aff00;
+        -webkit-text-stroke: 0.5px black;
+
     }
 }

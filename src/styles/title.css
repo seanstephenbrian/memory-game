@@ -1,14 +1,26 @@
 .title-section {
     min-height: 6vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    gap: calc(0.2*var(--rvv));
 }
 
 .title-text {
+    margin: calc(0.2*var(--rvv)) 0;
     color: #007600;
     font-family: 'MIP';
     font-size: calc(var(--rvv));
+}
+
+.instructions {
+    font-style: italic;
+    font-size: calc(0.4*var(--rvv));
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 /* desktop effects: */
@@ -22,4 +34,5 @@
         color: #20C20E;
         transform: scale(1.2);
     }
+
 }

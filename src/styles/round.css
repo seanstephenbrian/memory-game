@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: calc(0.3*var(--rvv));
 }
 
 .round-title {
@@ -19,7 +20,6 @@
 
 .round-number {
     margin-left: 3px;
-    text-decoration: underline;
     font-size: calc(0.5*var(--rvv));
 }
 
@@ -28,20 +28,11 @@
 }
 
 .card-container {
-    padding: calc(0.5*var(--rvv));
+    padding: calc(0.3*var(--rvv));
     max-width: 1000px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: calc(0.5*var(--rvv));
-}
-
-@media screen and (min-width: 600px) {
-    .round-title:hover {
-        --hover-green: #00ff00;
-        background-color: black;
-        color: var(--hover-green);
-        border: 1px solid var(--hover-green);
-    }
 }
