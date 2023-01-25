@@ -99,7 +99,7 @@ function App() {
     // render:
     return (
         <div className="game-container">
-            <Title />
+            <Title gameWon={gameWon} gameLost={gameLost} />
             {mainContent}
             <Footer />
         </div>

@@ -15,8 +15,20 @@
 }
 
 .instructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(0.1*var(--rvv));
+}
+
+.click-notice {
     font-style: italic;
     font-size: calc(0.4*var(--rvv));
+}
+
+.shuffle-notice {
+    font-size: calc(0.33*var(--rvv));
 }
 
 .underline {
