@@ -1,9 +1,27 @@
 footer {
     min-height: 5vh;
-    max-height: 20px;
     font-size: calc(0.4*var(--rvv));
     margin-top: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: calc(0.1*var(--rvv));
+    margin-bottom: calc(0.2*var(--rvv));
+}
+
+.ssbbd-link {
+    text-decoration: none;
+    color: black;
+}
+
+.ssbbd-link:visited {
+    color: black;
+}
+
+@media screen and (min-width: 600px) {
+    .ssbbd-link:hover {
+        text-decoration: underline;
+        color: #20C20E;
+    }
 }

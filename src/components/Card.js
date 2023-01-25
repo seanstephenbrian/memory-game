@@ -20,6 +20,7 @@ export default function Card(props) {
         }
     }
 
+    // render:
     return (
         <div className='card' onClick={handleClick}>
             <img className='card-img' src={imagePath} alt='memory card'></img>
