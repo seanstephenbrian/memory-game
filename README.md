@@ -11,7 +11,9 @@ current round's click count.
 
 a react hook checks the current click count against the round's total card count after any change to either variable; if two values are the same, a 'round won' message is relayed up to 
 the parent `App` component, which increments the round number, checks if the game has been won, updates 
-the card quantity for the current round, and so on.
+the card quantity for the next round, and so on.
 
-similar communication between the `Card`, `Round`, and `App` components occurs when the user makes a 
+similar communication occurs between the `Card`, `Round`, and `App` components when the user makes a 
 bad click, triggering the 'game lost' message.
+
+all drawings are original!
